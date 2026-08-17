@@ -89,12 +89,22 @@ updateGameList();
 
 $('#gamesList li').on('click', function () {
     let url = $(this).attr('url');
+
     if (window.location.protocol === 'file:' && !url.includes('.html')) {
         const searchParamsIndex = url.indexOf('?');
-        if (searchParamsIndex !== -1)
+
+        if (searchParamsIndex !== -1) {
             url = url.substring(0, searchParamsIndex) + 'index.html' + url.substring(searchParamsIndex);
-        else url += '/index.html';
+        } else {
+            url += '/index.html';
+        }
     }
+
+    // Make sure the loaded game URL ends with /
+    if (!url.endsWith('/')) {
+        url += '/';
+    }
+
     inGame = true;
     $('#everything-else').fadeOut();
     $('#page-loader').fadeIn();
