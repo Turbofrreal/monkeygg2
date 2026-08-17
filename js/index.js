@@ -897,10 +897,10 @@ function randomGame() {
 }
 
 const preferencesDefaults = {
-    cloak: true,
-    cloakUrl: 'https://classroom.google.com',
+    cloak: false
+    cloakUrl: 'https://hahayoucantseewhatimon',
     mask: true,
-    maskTitle: 'Home',
+    maskTitle: 'MonkeyGG2',
     maskIconUrl:
         'https://ssl.gstatic.com/classroom/ic_product_classroom_32.png',
     background: true
